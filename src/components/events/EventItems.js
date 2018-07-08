@@ -9,7 +9,7 @@ class EventItems extends Component {
       <Segment.Group>
         <Segment>
           <Item.Group>
-            <Item>
+            <Item  className="nav">
               <Item.Image size="tiny" circular src="assets/pat.jpg"  />
                 <Item.Content>
                   <Item.Header as="a">{event.title}</Item.Header>

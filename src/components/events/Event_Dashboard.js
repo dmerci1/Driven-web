@@ -119,7 +119,6 @@ class EventDash extends Component {
       events: updatedEvents
     })
   }
-
 render() {
   const {selectedEvent} = this.state;
   return (
