@@ -9,6 +9,7 @@ import UserDetails from './components/users/UserDetails';
 import EventDetails from './components/events/EventDetails';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
+import test from './components/test';
 
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
                   <Route path='/peaple/:id' component={UserDetails} />
                   <Route path='/settings' component={SettingsDashboard} />
                   <Route path='/createEvent' component={EventForm} />
+                  <Route path='/test' component={test} />
                 </Switch>
               </Container>
             </div>
