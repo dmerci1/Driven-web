@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Segment, Item, Icon, List, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 import EventAttendes from './EventAttendes';
 
 class EventItems extends Component {
@@ -9,7 +10,7 @@ class EventItems extends Component {
       <Segment.Group>
         <Segment>
           <Item.Group>
-            <Item  className="nav">
+            <Item>
               <Item.Image size="tiny" circular src="assets/pat.jpg"  />
                 <Item.Content>
                   <Item.Header as="a">{event.title}</Item.Header>
@@ -37,7 +38,7 @@ class EventItems extends Component {
               <Segment clearing>
                       <span>{event.description}</span>
                       <Button onClick={deleteEvent(event.id)} as="a" color="red" floated="right" content="Delete" />
-                      <Button onClick={onEventOpen(event)} as="a" color="teal" floated="right" content="View" />
+                      <Button onClick={onEventOpen(event)} as={Link} to={`/event/${event.id}`} color="teal" floated="right" content="View" />
                 </Segment>
           </Segment.Group>
     );

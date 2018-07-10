@@ -6,11 +6,9 @@ import EventForm from './components/events/EventForm';
 import SettingsDashboard from './components/settings/SettingsDashboard';
 import UserDashboard from './components/users/UserDashboard';
 import UserDetails from './components/users/UserDetails';
-import EventDetails from './components/events/EventDetails';
+import EventDetails from './components/events/EventDetails/DetailsPage';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
-import test from './components/test';
-
 
 class App extends Component {
   render() {
@@ -28,12 +26,11 @@ class App extends Component {
               <Container className="main">
                 <Switch>
                   <Route path='/events' component={EventDash} />
-                  <Route path='/events/:id' component={EventDetails} />
+                  <Route path='/event/:id' component={EventDetails} />
                   <Route path='/people' component={UserDashboard} />
-                  <Route path='/peaple/:id' component={UserDetails} />
+                  <Route path='/people/:id' component={UserDetails} />
                   <Route path='/settings' component={SettingsDashboard} />
                   <Route path='/createEvent' component={EventForm} />
-                  <Route path='/test' component={test} />
                 </Switch>
               </Container>
             </div>

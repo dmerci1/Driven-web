@@ -8,6 +8,7 @@ import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 import App from './App';
 import reducers from './reducers'
+import ScrollToTop from './components/scroll';
 import registerServiceWorker from './registerServiceWorker';
 
 const middlewares = [];
@@ -25,7 +26,9 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </BrowserRouter>
   </Provider>,
    document.getElementById('root')
