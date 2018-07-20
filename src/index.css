@@ -11,3 +11,7 @@ body {
 .main {
   margin-top: 50px;
 }
+
+.navigation {
+  background-color: red;
+}

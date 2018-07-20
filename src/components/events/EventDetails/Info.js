@@ -27,7 +27,7 @@ const EventInfo = ({event}) => {
       <Segment>
         <Grid>
           <Grid.Column width={1}>
-            <Icon size="large" color="teal" name="location" />
+            <Icon size="large" color="teal" name="marker" />
           </Grid.Column>
           <Grid.Column width={15}>
             <span>{event.venue}</span>

@@ -18,7 +18,6 @@ const initialState = [
         name: 'bob',
         photoURL: 'assets/pat.jpg'
       },
-    
     ]
   },
   {

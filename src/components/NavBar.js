@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Container, Button } from 'semantic-ui-react';
+import { Menu, Container, Button, Icon } from 'semantic-ui-react';
 import { NavLink, Link, withRouter } from 'react-router-dom';
 import SignedOutMenu from './SignedOutMenu';
 import SignedInMenu from './SignedInMenu';
@@ -28,8 +28,8 @@ handleSignOut = () => {
       <Menu inverted fixed="top">
         <Container>
           <Menu.Item as={Link} to='/' header>
-            <img src="/assets/icon.png" alt="logo" />
-            Social Sphere
+            <Icon size="big" color="white" name="trophy" />
+            Driven
           </Menu.Item>
           <Menu.Item  as={NavLink} to='./events' name="Events" />
           {authenticated &&

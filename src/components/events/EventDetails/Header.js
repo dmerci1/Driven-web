@@ -1,5 +1,6 @@
 import React from 'react';
 import { Segment, Item, Image, Header, Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const eventImageStyle = {
   filter: 'brightness(50%)'
@@ -42,7 +43,7 @@ const EventHeader = ({event}) => {
         <Button>Canel My Place</Button>
         <Button color="teal">Join This Event</Button>
 
-        <Button color="orange" floated="right">
+        <Button as={Link} to={`/manage/${event.id}`} color="orange" floated="right">
           Manage Event
         </Button>
       </Segment>

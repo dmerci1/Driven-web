@@ -5,7 +5,7 @@ import EventAttendes from './EventAttendes';
 
 class EventItems extends Component {
   render() {
-    const {event, onEventOpen, deleteEvent} = this.props;
+    const {event, deleteEvent} = this.props;
     return (
       <Segment.Group>
         <Segment>
@@ -38,7 +38,7 @@ class EventItems extends Component {
               <Segment clearing>
                       <span>{event.description}</span>
                       <Button onClick={deleteEvent(event.id)} as="a" color="red" floated="right" content="Delete" />
-                      <Button onClick={onEventOpen(event)} as={Link} to={`/event/${event.id}`} color="teal" floated="right" content="View" />
+                      <Button as={Link} to={`/event/${event.id}`} color="teal" floated="right" content="View" />
                 </Segment>
           </Segment.Group>
     );
