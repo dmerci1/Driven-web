@@ -4,6 +4,7 @@ import cuid from 'cuid';
 import { Grid, Button } from 'semantic-ui-react';
 import EventList from './EventList';
 import EventForm from './EventForm';
+import EventActivity from './EventActivity';
 import { createEvent, editEvent, deleteEvent } from'../../actions/EventActions';
 import Spinner from '../reuseables/Spinner';
 
@@ -30,7 +31,10 @@ render() {
           deleteEvent={this.handleDeleteEvent}
           events={events} />
       </Grid.Column>
-      <Grid.Column width={6} />
+
+      <Grid.Column width={6}>
+        <EventActivity />
+      </Grid.Column>
     </Grid>
   );
 }
