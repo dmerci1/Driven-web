@@ -5,11 +5,12 @@ import { NavLink, Link, withRouter } from 'react-router-dom';
 import SignedOutMenu from './SignedOutMenu';
 import SignedInMenu from './SignedInMenu';
 import { openModal } from '../actions/ModalActions';
-import { signIn } from '../actions/AuthActions';
+import { signIn, signOut } from '../actions/AuthActions';
 
 const actions = {
   openModal,
-  signIn
+  signIn,
+  signOut
 }
 
 const mapState = (state) => ({

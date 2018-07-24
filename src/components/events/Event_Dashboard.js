@@ -5,9 +5,11 @@ import { Grid, Button } from 'semantic-ui-react';
 import EventList from './EventList';
 import EventForm from './EventForm';
 import { createEvent, editEvent, deleteEvent } from'../../actions/EventActions';
+import Spinner from '../reuseables/Spinner';
 
 const mapState = (state) => ({
-  events: state.events
+  events: state.events,
+  loading: state.async.loading
 });
 
 const actions = {
@@ -19,7 +21,8 @@ class EventDash extends Component {
   };
 
 render() {
-  const {events} = this.props;
+  const {events, loading} = this.props;
+  if (loading) return <Spinner />
   return (
     <Grid>
       <Grid.Column width={10}>
