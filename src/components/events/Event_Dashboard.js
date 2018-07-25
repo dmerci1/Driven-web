@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
 import cuid from 'cuid';
 import { Grid, Button } from 'semantic-ui-react';
 import EventList from './EventList';
@@ -9,7 +10,7 @@ import { createEvent, editEvent, deleteEvent } from'../../actions/EventActions';
 import Spinner from '../reuseables/Spinner';
 
 const mapState = (state) => ({
-  events: state.events,
+  events: state.firestore.ordered.events,
   loading: state.async.loading
 });
 
@@ -40,4 +41,6 @@ render() {
 }
 
 }
-export default connect(mapState, actions)(EventDash);
+export default connect(mapState, actions)(
+  firestoreConnect([{ collection: 'events' }])(EventDash)
+);
