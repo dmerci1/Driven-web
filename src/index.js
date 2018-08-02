@@ -14,6 +14,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store = StoreConfig();
 
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -30,4 +31,3 @@ ReactDOM.render(
   </Provider>,
    document.getElementById('root')
 );
-registerServiceWorker();

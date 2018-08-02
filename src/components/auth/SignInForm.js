@@ -1,13 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Form, Segment, Button } from 'semantic-ui-react';
+import { Form, Segment, Button, Label, Divider } from 'semantic-ui-react';
+import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form';
 import FormTextInput from '../reuseables/FormTextInput';
-import { signIn } from '../../actions/AuthActions';
+import { signIn, socialLogin } from '../../actions/AuthActions';
+import SocialMediaSignUp from './SocialMediaSignUp';
 
-const actions = { signIn };
+const actions = {
+  signIn,
+  socialLogin
+}
 
-const SignInForm = ({ signIn, handleSubmit }) => {
+const signInForm = ({signIn, handleSubmit, error, socialLogin}) => {
   return (
     <Form error size="large" onSubmit={handleSubmit(signIn)}>
       <Segment>
@@ -15,20 +19,25 @@ const SignInForm = ({ signIn, handleSubmit }) => {
           name="email"
           component={FormTextInput}
           type="text"
-          placeholder="Email"
+          placeholder="Email Address"
         />
         <Field
-          name="passowrd"
+          name="password"
           component={FormTextInput}
           type="password"
           placeholder="password"
         />
+        {error && <Label basic color='red'>{error}</Label>}
         <Button fluid size="large" color="teal">
-          Sign In
+          Login
         </Button>
+        <Divider>
+          Or
+        </Divider>
+        <SocialMediaSignUp socialLogin={socialLogin}/>
       </Segment>
-     </Form>
+    </Form>
   );
 };
 
-export default connect(null, actions)(reduxForm({ form: 'SignInForm' })(SignInForm));
+export default connect(null, actions)(reduxForm({form: 'signInForm'})(signInForm));

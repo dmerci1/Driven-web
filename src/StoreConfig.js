@@ -9,7 +9,8 @@ import reducers from './reducers';
 const rrfConfig = {
   userProfile: 'users',
   attachAuthIsReady: true,
-  useFirestoreForProfile: true
+  useFirestoreForProfile: true,
+  updateProfileOnLogin: false
 };
 
 export const StoreConfig = preloadedState => {
@@ -21,7 +22,7 @@ export const StoreConfig = preloadedState => {
      reactReduxFirebase(firebase, rrfConfig),
      reduxFirestore(firebase)
    );
-   
+
 const store = createStore(
   reducers,
   middlewareEnhancer,
