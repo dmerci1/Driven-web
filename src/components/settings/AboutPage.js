@@ -25,7 +25,7 @@ const AboutPage = ({ pristine, submitting, handleSubmit, updateProfile }) => {
                   name="status"
                   type="radio"
                   value="single"
-                  label="Signle"
+                  label="Single"
                   component={FormRadioInput}
                 />
                 <Field

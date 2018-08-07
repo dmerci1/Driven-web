@@ -14,7 +14,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store = StoreConfig();
 
-
+store.firebaseAuthIsReady.then(() => {
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -30,4 +30,5 @@ ReactDOM.render(
     </BrowserRouter>
   </Provider>,
    document.getElementById('root')
-);
+ );
+});
