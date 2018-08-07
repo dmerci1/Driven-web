@@ -50,10 +50,16 @@ class BasicPage extends Component {
           />
           <Field
             width={8}
-            name='Home Town'
+            name='homeTown'
             placeholder='Home Town'
             options={{types: ['(cities)']}}
-            label='Female'
+            component={FormLocationInput}
+          />
+          <Field
+            width={8}
+            name='currentCity'
+            placeholder='Current City'
+            options={{types: ['(cities)']}}
             component={FormLocationInput}
           />
           <Divider />

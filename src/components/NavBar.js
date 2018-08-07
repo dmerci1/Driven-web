@@ -51,7 +51,7 @@ handleSignOut = () => {
             <Button as={Link} to='./createEvent' floated="right" positive inverted content="Create Event" />
           </Menu.Item>}
             {authenticated ? (
-              <SignedInMenu  profile={profile} signOut={this.handleSignOut} />
+              <SignedInMenu  auth={auth} profile={profile} signOut={this.handleSignOut} />
             ) : (
               <SignedOutMenu signIn={this.handleSignIn} register={this.handleRegister}/>
             )}

@@ -5,7 +5,7 @@ import EventDash from './components/events/Event_Dashboard';
 import EventForm from './components/events/EventForm';
 import SettingsDashboard from './components/settings/SettingsDashboard';
 import UserDashboard from './components/users/UserDashboard';
-import UserDetails from './components/users/UserDetails';
+import UserProfile from './components/users/UserProfile';
 import EventDetails from './components/events/EventDetails/DetailsPage';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
@@ -31,7 +31,7 @@ class App extends Component {
                   <Route path='/events' component={EventDash} />
                   <Route path='/event/:id' component={EventDetails} />
                   <Route path='/people' component={UserDashboard} />
-                  <Route path='/people/:id' component={UserDetails} />
+                  <Route path='/profile/:id' component={UserProfile} />
                   <Route path='/manage/:id' component={EventForm} />
                   <Route path='/settings' component={SettingsDashboard} />
                   <Route path='/createEvent' component={EventForm} />
